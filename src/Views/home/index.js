@@ -1,8 +1,24 @@
 import React from 'react'
-import {} from './style'
+import { Box, Logo, Title, Text, Container, Section } from './style'
+import RickMortyLogo from '../../assets/imgs/rick-morty-logo.svg'
+
+import SearchInput from '../../components/searchInput'
+import NavigationMenu from '../../components/NavigationMenu'
 
 export default function home() {
     return (
-        <></>
+        <Container>
+            <Box>
+                <Section>
+                    <Logo src={RickMortyLogo} />
+                    <NavigationMenu />
+                    <Title>wellcome to Rick and Morty Universe!</Title>
+                    <Text>This is a site for fans of the rick and morty series, here you can have access to information about the characters, locations and episodes of the series.</Text>
+                    <div style={{ marginTop: "50px" }}>
+                        <SearchInput />
+                    </div>
+                </Section>
+            </Box>
+        </Container>
     )
 }
