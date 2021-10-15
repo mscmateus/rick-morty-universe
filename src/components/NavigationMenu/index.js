@@ -6,21 +6,21 @@ export default function NavigationMenu() {
     return (
         <Container>
             <Menu>
-                <MenuItem>
-                    <ItemLink to="/characters">
+                <ItemLink to="/characters">
+                    <MenuItem style={{borderTopLeftRadius: 5, borderBottomLeftRadius: 5}}>
                         Characters
-                    </ItemLink>
-                </MenuItem>
-                <MenuItem>
-                    <ItemLink to="/lacations">
+                    </MenuItem>
+                </ItemLink>
+                <ItemLink to="/lacations">
+                    <MenuItem>
                         Lacations
-                    </ItemLink>
-                </MenuItem>
-                <MenuItem>
-                    <ItemLink to="/episodes">
+                    </MenuItem>
+                </ItemLink>
+                <ItemLink to="/episodes">
+                    <MenuItem style={{borderTopRightRadius: 5, borderBottomRightRadius: 5}}>
                         Episodes
-                    </ItemLink>
-                </MenuItem>
+                    </MenuItem>
+                </ItemLink>
             </Menu>
         </Container>
     )

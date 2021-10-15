@@ -33,7 +33,7 @@ export const Title = styled.h1`
 export const Text = styled.p`
     margin-right: 50px;
     margin-left: 50px;
-    font-size: 16px;
+    font-size: 20px;
     color: #FFF;
 `
 export const Logo = styled.img`

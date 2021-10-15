@@ -3,14 +3,15 @@ import { Link } from "react-router-dom";
 
 export const Container = styled.nav`
     margin: 0 auto;
-`
+    `
 
 export const Menu = styled.ul`
     list-style: none;
     padding: 0;
+    border: 0;
     background-color: #C4C4C4;
-
     display: inline-table;
+    border-radius: 5px;
     `
 
 export const ItemLink = styled(Link)`
@@ -18,17 +19,20 @@ export const ItemLink = styled(Link)`
     font-weight: bold;
     font-size: 16px;
     text-decoration: none;
-    padding: 30px;  
+    `
+export const MenuItem = styled.li`
+    display: table-cell;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 20px;
+    padding-right: 20px;
     &:hover{
         background-color: #208e45ff;
         color: #FFF;
         transition: 0.5s;
-        opacity: 0.7;
+        ${ItemLink}{
+            color: #FFF;
+        }
     }
-    `
-export const MenuItem = styled.li`
-    padding: 30px;
-    margin:0;
-    display: table-cell;
 `
 
