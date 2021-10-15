@@ -6,8 +6,13 @@ export default function NavigationMenu() {
     return (
         <Container>
             <Menu>
-                <ItemLink to="/characters">
+                <ItemLink to="/home">
                     <MenuItem style={{borderTopLeftRadius: 5, borderBottomLeftRadius: 5}}>
+                        Home
+                    </MenuItem>
+                </ItemLink>
+                <ItemLink to="/characters">
+                    <MenuItem>
                         Characters
                     </MenuItem>
                 </ItemLink>
