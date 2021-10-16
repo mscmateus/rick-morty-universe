@@ -16,7 +16,7 @@ export default function NavigationMenu() {
                         Characters
                     </MenuItem>
                 </ItemLink>
-                <ItemLink to="/lacations">
+                <ItemLink to="/locations">
                     <MenuItem>
                         Lacations
                     </MenuItem>
