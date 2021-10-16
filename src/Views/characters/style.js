@@ -1,7 +1,10 @@
 import styled from "styled-components"
 
 export const Container = styled.div`
-
+    min-height: 100vh;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
 `
 export const Logo = styled.img`
     max-width: 250px;
@@ -18,7 +21,6 @@ export const Head = styled.div`
 export const HeadBox = styled.div`
     text-align: center;
 `
-
 export const LogoColumn = styled.div`
     height: 100%;
     text-align: center;
@@ -27,11 +29,21 @@ export const LogoColumn = styled.div`
     min-width: 210px;
     display: inline-block;
 `
-
 export const Column = styled.div`
     display: inline-block;
 `
+//lista
+
 export const ListContainer = styled.div`
-    text-align: center;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+`
+export const ListSection = styled.div`
+    max-width: 1500px;
     padding: 10px;
+    margin-top: 50px;
+    margin-bottom: 50px;
 `

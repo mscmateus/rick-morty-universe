@@ -1,5 +1,5 @@
 import React from 'react'
-import { Container, Logo, Head, HeadBox, LogoColumn, Column, ListContainer } from './style'
+import { Container, Logo, Head, HeadBox, LogoColumn, Column, ListContainer, ListSection } from './style'
 import { Link } from 'react-router-dom'
 
 import RickMortyLogo from '../../assets/imgs/rick-morty-logo.svg'
@@ -25,14 +25,18 @@ export default function Characters() {
                 </Column>
             </Head>
             <ListContainer>
-                <CharacterItem />
-                <CharacterItem />
-                <CharacterItem />
-                <CharacterItem />
-                <CharacterItem />
-                <CharacterItem />
+                <ListSection>
+                    <CharacterItem />
+                    <CharacterItem />
+                    <CharacterItem />
+                    <CharacterItem />
+                    <CharacterItem />
+                    <CharacterItem />
+                    <CharacterItem />
+                    <CharacterItem />
+                </ListSection>
             </ListContainer>
-            <Copyright />
+            <Copyright/>
         </Container>
     )
 }

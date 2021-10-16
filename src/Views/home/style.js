@@ -2,16 +2,18 @@ import styled from 'styled-components'
 
 
 export const Container = styled.div`
-    width: 100vw;
-    height: 100vh;
+    width: 100%; 
+    min-height: 100vh;
     display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
 `
 
 export const Box = styled.div`
-    background-color: rgb(0,0,0,0.5);
+    flex-grow: 1;
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
     padding-top: 100px;
     padding-bottom: 100px;
     padding-left: 50px;
@@ -19,7 +21,6 @@ export const Box = styled.div`
 `
 
 export const Section = styled.div`
-    width: "100%";
     justify-content: center;
     align-items: center;
     text-align: center;

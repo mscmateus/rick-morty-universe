@@ -5,7 +5,7 @@ export const Container = styled.div`
     background-color: #A4A4A4;
     padding: 20px;
     margin: 10px;
-    display: inline-block;
+    display: inline-grid;
 `
 
 export const CharacterImg = styled.img`
