@@ -11,12 +11,11 @@ export const Container = styled.div`
 export const ListContainer = styled.div`
     flex-grow: 1;
     display: flex;
-    flex-direction: row;
     justify-content: center;
     align-items: center;
 `
 export const ListSection = styled.div`
-    max-width: 1500px;
+    max-width: 1800px;
     padding: 10px;
     margin-top: 50px;
     margin-bottom: 50px;

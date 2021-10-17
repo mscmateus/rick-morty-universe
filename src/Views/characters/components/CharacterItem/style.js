@@ -5,15 +5,21 @@ export const Container = styled.div`
     background-color: #A4A4A4;
     padding: 20px;
     margin: 10px;
-    display: inline-grid;
+    width: 340px;
+    display: inline-block;
 `
 
+export const Section = styled.div`
+    display: flexbox;
+`
 export const CharacterImg = styled.img`
     width: 300px;
     height: 300px;
 `
 
 export const CharacterSection = styled.div`
+    display: inline-block;
+    width: 90%;
     h1{
         margin: 0;
         color: #FFF;

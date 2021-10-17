@@ -11,12 +11,12 @@ export default function NavigationMenu() {
                         Home
                     </MenuItem>
                 </ItemLink>
-                <ItemLink to="/characters">
-                    <MenuItem>
+                <ItemLink to="/characters" >
+                    <MenuItem style={{borderTopRightRadius: 5, borderBottomRightRadius: 5}}>
                         Characters
                     </MenuItem>
                 </ItemLink>
-                <ItemLink to="/locations">
+                {/* <ItemLink to="/locations">
                     <MenuItem>
                         Lacations
                     </MenuItem>
@@ -25,7 +25,7 @@ export default function NavigationMenu() {
                     <MenuItem style={{borderTopRightRadius: 5, borderBottomRightRadius: 5}}>
                         Episodes
                     </MenuItem>
-                </ItemLink>
+                </ItemLink> */}
             </Menu>
         </Container>
     )
