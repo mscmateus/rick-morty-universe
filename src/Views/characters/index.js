@@ -3,7 +3,7 @@ import { Container, ListContainer, ListSection } from './style'
 
 import Head from '../../components/headSearch'
 import Copyright from '../../components/copyright'
-import CharacterItem from './components/characterItem'
+import CharacterItem from './components/CharacterItem'
 import Pagenator from '../../components/pagenator'
 
 import { getCharacters } from '../../services/api/character-api'
