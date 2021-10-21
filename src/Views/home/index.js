@@ -3,7 +3,6 @@ import { Box, Logo, Title, Text, Container, Section } from './style'
 import RickMortyLogo from '../../assets/imgs/rick-morty-logo.svg'
 
 import SearchInput from '../../components/searchInput'
-
 import NavigationMenu from '../../components/navigationMenu'
 import Copyright from '../../components/copyright'
 
