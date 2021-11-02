@@ -32,6 +32,5 @@ export const Icon = styled.button`
     border: unset;
     height: 40px;
     width: 40px;
-    
-
+    cursor: pointer;
 `

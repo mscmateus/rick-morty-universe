@@ -5,18 +5,15 @@ export const Container = styled.div`
     background-color: #A4A4A4;
     padding: 20px;
     margin: 10px;
-    width: 340px;
-    display: inline-block;
-`
-
-export const Section = styled.div`
-    display: flexbox;
+    display: flex;
+    flex-direction: column;
 `
 export const CharacterImg = styled.img`
     width: 300px;
     height: 300px;
+    align-self: center;
+    border-radius: 5px;
 `
-
 export const CharacterSection = styled.div`
     display: inline-block;
     width: 90%;

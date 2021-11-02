@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Container, ListContainer, ListSection } from './style'
+import { Container, ListContainer } from './style'
 
 import Head from '../../components/headSearch'
 import Copyright from '../../components/copyright'
@@ -9,26 +9,26 @@ import Pagenator from '../../components/pagenator'
 import { getCharacters, getCharacterByName } from '../../services/api/character-api'
 //msc mateus
 export default function Characters() {
-    const [search, setSearch] = useState("")
     const [characters, setCharacters] = useState([])
     const [page, setPage] = useState(1)
     const [pages, setPages] = useState(1)
+    const [search, setSearch] = useState("")
 
     useEffect(() => {
-        _getCharactersByName(page)
-    }, [search])
+        _getCharactersByName("",page)
+    }, [])
 
-    function _getCharactersByName(page) {
-        console.log(page)
+    function _getCharactersByName(search,page) {
         setPage(page)
+        setSearch(search)
         getCharacterByName(search,page)
             .then(response => {
                 setCharacters(response.results)
                 setPages(response.info.pages)
-                console.log(response.info)
             })
             .catch((error) => {
                 console.log(error)
+                console.log({error})
             })
     }
     function getPreviusPage() {
@@ -41,14 +41,15 @@ export default function Characters() {
             _getCharactersByName(page+1)
         }
     }
+    function handleSubmit(value){
+        _getCharactersByName(value,1)
+    }
     return (
         <Container>
             <Head
-                search={search}
-                searchOnChange={setSearch}
+                onSubmit={handleSubmit}
             />
             <ListContainer>
-                <ListSection>
                     {
                         characters.map((character, indice) =>
                             <CharacterItem
@@ -61,12 +62,11 @@ export default function Characters() {
                             />
                         )
                     }
-                </ListSection>
             </ListContainer>
             <Pagenator
                 corrent={page}
                 pages={pages}
-                pageOnClick={_getCharactersByName}
+                pageOnClick={(page)=>_getCharactersByName(search, page)}
                 nextOnClick={getNextPage}
                 previousOnClick={getPreviusPage}
             />

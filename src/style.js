@@ -11,8 +11,8 @@ export const App = createGlobalStyle`
         background-repeat: no-repeat;
         background-attachment: fixed;
         background-size: cover;
-        width: 100%;
-        height: 100%;
+        width: 100vw;
+        height: 100vh;
         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     }
 `;

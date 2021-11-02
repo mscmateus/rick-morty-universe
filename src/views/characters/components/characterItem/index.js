@@ -11,9 +11,8 @@ export default function CharacterItem({
 }) {
     return (
         <Container>
-            <Section>
-            <CharacterImg src={image} />
             <CharacterSection>
+                <CharacterImg src={image} />
                 <SectionRow>
                     <h1>{name}</h1>
                     <p>{status}</p>
@@ -23,7 +22,6 @@ export default function CharacterItem({
                     <p>{specie}</p>
                 </SectionRow>
             </CharacterSection>
-            </Section>
         </Container>
     )
 }

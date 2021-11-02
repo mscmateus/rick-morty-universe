@@ -35,39 +35,37 @@ export default function Pagenator({
         return result
     }
     return (
-        <Container>
-            <Menu>
-                <MenuItem onClick={previousOnClick} style={{ borderTopLeftRadius: 5, borderBottomLeftRadius: 5 }}>
-                    {'Prev'}
-                </MenuItem>
-                {renderPrevious().map((pageNumber, index) =>
-                    <MenuItem onClick={() => pageOnClick(pageNumber)}>
-                        {pageNumber}
-                    </MenuItem>)
-                }
-                <MenuItemCorrent>
-                    {corrent}
+        <Menu>
+            <MenuItem onClick={previousOnClick} style={{ borderTopLeftRadius: 5, borderBottomLeftRadius: 5 }}>
+                {'Prev'}
+            </MenuItem>
+            {renderPrevious().map((pageNumber, index) =>
+                <MenuItem onClick={() => pageOnClick(pageNumber)}>
+                    {pageNumber}
+                </MenuItem>)
+            }
+            <MenuItemCorrent>
+                {corrent}
+            </MenuItemCorrent>
+            {renderNexts().map((pageNumber, index) =>
+                <MenuItem onClick={() => pageOnClick(pageNumber)}>
+                    {pageNumber}
+                </MenuItem>)
+            }
+            {(corrent + 2 < pages) ?
+                (<><MenuItemCorrent>
+                    ...
                 </MenuItemCorrent>
-                {renderNexts().map((pageNumber, index) =>
-                    <MenuItem onClick={() => pageOnClick(pageNumber)}>
-                        {pageNumber}
-                    </MenuItem>)
-                }
-                {(corrent + 2 < pages) ?
-                    (<><MenuItemCorrent>
-                        ...
-                    </MenuItemCorrent>
-                        <MenuItem onClick={() => pageOnClick(pages)}>
-                            {pages}
-                        </MenuItem>
-                    </>)
-                    :
-                    null
-                }
-                <MenuItem onClick={nextOnClick} style={{ borderTopRightRadius: 5, borderBottomRightRadius: 5 }}>
-                    {'Next'}
-                </MenuItem>
-            </Menu>
-        </Container>
+                    <MenuItem onClick={() => pageOnClick(pages)}>
+                        {pages}
+                    </MenuItem>
+                </>)
+                :
+                null
+            }
+            <MenuItem onClick={nextOnClick} style={{ borderTopRightRadius: 5, borderBottomRightRadius: 5 }}>
+                {'Next'}
+            </MenuItem>
+        </Menu>
     )
 }
