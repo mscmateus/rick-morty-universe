@@ -1,10 +1,10 @@
 import React from 'react'
 import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom'
 
-import Home from '../Views/home'
-import Characters from '../Views/characters'
-import Locations from '../Views/locations'
-import Episodes from '../Views/episodes'
+import Home from '../views/home'
+import Characters from '../views/characters'
+// import Locations from '../views/locations'
+import Episodes from '../views/episodes'
 
 export default function Routes() {
     return (
@@ -19,9 +19,9 @@ export default function Routes() {
                 <Route path="/characters">
                     <Characters/>
                 </Route>
-                <Route path="/locations">
+                {/* <Route path="/locations">
                     <Locations/>
-                </Route>
+                </Route> */}
                 <Route path="/episodes">
                     <Episodes/>
                 </Route>

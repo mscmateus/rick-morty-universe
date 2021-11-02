@@ -2,12 +2,22 @@ import React from 'react'
 import { FaSearch } from 'react-icons/fa'
 import { Container, Icon, Input, FormItem } from './style'
 
-export default function SearchInput() {
+export default function SearchInput({
+    value="",
+    onChange=()=>{}
+}) {
     return (
         <Container>
             <FormItem>
                 <form action="">
-                    <Input type="search" id="busca" name="search" placeholder="Search" />
+                    <Input
+                    type="search"
+                    id="busca"
+                    name="search"
+                    placeholder="Search"
+                    value
+                    onChange
+                    />
                 </form>
             </FormItem>
             <FormItem>

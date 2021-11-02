@@ -6,7 +6,7 @@ import Copyright from '../../components/copyright'
 import CharacterItem from './components/characterItem'
 import Pagenator from '../../components/pagenator'
 
-import { getCharacters } from '../../services/api/character-api'
+import { getCharacters, getCharacterByName } from '../../services/api/character-api'
 
 export default function Characters() {
     const [search, setSearch] = useState("")
@@ -15,13 +15,13 @@ export default function Characters() {
     const [pages, setPages] = useState(1)
 
     useEffect(() => {
-        _getCharacters(1)
-    }, [])
+        _getCharactersByName(page)
+    }, [search])
 
-    function _getCharacters(page) {
+    function _getCharactersByName(page) {
         console.log(page)
         setPage(page)
-        getCharacters(page)
+        getCharacterByName(search,page)
             .then(response => {
                 setCharacters(response.results)
                 setPages(response.info.pages)
@@ -33,17 +33,20 @@ export default function Characters() {
     }
     function getPreviusPage() {
         if(page-1 > 0){
-            _getCharacters(page-1)
+            _getCharactersByName(page-1)
         }
     }
     function getNextPage() {
         if(page+1 <= pages){
-            _getCharacters(page+1)
+            _getCharactersByName(page+1)
         }
     }
     return (
         <Container>
-            <Head />
+            <Head
+                search={search}
+                searchOnChange={setSearch}
+            />
             <ListContainer>
                 <ListSection>
                     {
@@ -63,7 +66,7 @@ export default function Characters() {
             <Pagenator
                 corrent={page}
                 pages={pages}
-                pageOnClick={_getCharacters}
+                pageOnClick={_getCharactersByName}
                 nextOnClick={getNextPage}
                 previousOnClick={getPreviusPage}
             />

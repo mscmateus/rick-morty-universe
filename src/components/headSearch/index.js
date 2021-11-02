@@ -6,10 +6,13 @@ import RickMortyLogo from '../../assets/imgs/rick-morty-logo.svg'
 import NavigationMenu from '../navigationMenu'
 import SearchInput from '../searchInput'
 
-export default function Characters() {
+export default function Characters({
+    search="",
+    searchOnChange=()=>{}
+}) {
     return (
         <Head>
-            <LogoColumn>
+            <LogoColumn> 
                 <Link to={"/home"}>
                     <Logo src={RickMortyLogo} />
                 </Link>
@@ -17,7 +20,7 @@ export default function Characters() {
             <Column>
                 <HeadBox>
                     <NavigationMenu />
-                    <SearchInput />
+                    <SearchInput value={search} onChange={searchOnChange}/>
                 </HeadBox>
             </Column>
         </Head>
