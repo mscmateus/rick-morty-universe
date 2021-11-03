@@ -23,7 +23,6 @@ export default function Characters() {
     }, [])
 
     function _getCharactersByName(search,page) {
-        console.log(search)
         setPage(page)
         setSearch(search)
         getCharacterByName(search,page)

@@ -19,10 +19,10 @@ export const getCharactersWithURL = (url) => {
     })
 }
 
-export const getCharacter = (characterId,page) => {
+export const getCharacter = (characterId) => {
     return new Promise((resolve, reject)=>{
         api
-            .get("/character/"+characterId+"/?page"+page)
+            .get("/character/"+characterId)
             .then((response) => resolve(response.data))
             .catch((error) => reject(error));
     })
