@@ -16,12 +16,12 @@ export default function NavigationMenu() {
                         Characters
                     </MenuItem>
                 </ItemLink>
-                {/* <ItemLink to="/locations">
+                <ItemLink to="/locations">
                     <MenuItem>
                         Lacations
                     </MenuItem>
                 </ItemLink>
-                <ItemLink to="/episodes">
+                {/* <ItemLink to="/episodes">
                     <MenuItem style={{borderTopRightRadius: 5, borderBottomRightRadius: 5}}>
                         Episodes
                     </MenuItem>

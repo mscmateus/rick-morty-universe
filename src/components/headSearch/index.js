@@ -7,7 +7,9 @@ import NavigationMenu from '../navigationMenu'
 import SearchInput from '../searchInput'
 
 export default function Characters({
-    onSubmit=()=>{}
+    value="",
+    onSubmit=()=>{},
+    placeholder=""
 }) {
     return (
         <Head>
@@ -19,7 +21,7 @@ export default function Characters({
             <Column>
                 <HeadBox>
                     <NavigationMenu />
-                    <SearchInput onSubmit={onSubmit}/>
+                    <SearchInput placeholder={placeholder} search={value} onSubmit={onSubmit}/>
                 </HeadBox>
             </Column>
         </Head>

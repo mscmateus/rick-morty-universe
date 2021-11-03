@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import { Link as a } from 'react-router-dom'
 
 export const Container = styled.div`
     border-radius: 5px;
@@ -35,4 +36,15 @@ export const CharacterSection = styled.div`
 export const SectionRow = styled.div`
     text-align: left;
     margin-top: 15px;
+`
+
+export const Name = styled(a)`
+    margin: 0;
+    color: #FFF;
+    font-weight: bold;
+    font-size: x-large;
+    padding-bottom: 10px;
+    &:hover{
+        color: #208e45ff;
+    }
 `

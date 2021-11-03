@@ -1,6 +1,6 @@
 import React from 'react'
-import { Container, CharacterImg, CharacterSection, SectionRow, Section } from './style'
-
+import { Container, CharacterImg, CharacterSection, SectionRow, Name } from './style'
+import { Link } from 'react-router-dom'
 export default function CharacterItem({
     id = "",
     image = "",
@@ -12,9 +12,9 @@ export default function CharacterItem({
     return (
         <Container>
             <CharacterSection>
-                <CharacterImg src={image} />
+                <Link to={"/character/" + id}><CharacterImg src={image} /></Link>
                 <SectionRow>
-                    <h1>{name}</h1>
+                    <Name to={"/character/" + id}>{name}</Name>
                     <p>{status}</p>
                 </SectionRow>
                 <SectionRow>

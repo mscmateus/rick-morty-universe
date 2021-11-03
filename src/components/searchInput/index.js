@@ -3,9 +3,14 @@ import { FaSearch } from 'react-icons/fa'
 import { Container, Icon, Input, FormItem } from './style'
 
 export default function SearchInput({
-    onSubmit = ()=>{}
+    search="",
+    onSubmit = ()=>{},
+    placeholder=""
 }) {
     const [value,setValue] = React.useState("")
+    React.useEffect(()=>{
+        setValue(search)
+    },[])
     function handleSubmit(event){
         onSubmit(value)
         event.preventDefault();
@@ -21,7 +26,7 @@ export default function SearchInput({
                         type="search"
                         id="search"
                         name="search"
-                        placeholder="Search"
+                        placeholder={placeholder}
                         value={value}
                         onChange={handleChange}
                     />

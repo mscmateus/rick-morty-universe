@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Container, ListContainer } from './style'
+import { useLocation } from "react-router-dom";
 
 import Head from '../../components/headSearch'
 import Copyright from '../../components/copyright'
@@ -12,13 +13,17 @@ export default function Characters() {
     const [characters, setCharacters] = useState([])
     const [page, setPage] = useState(1)
     const [pages, setPages] = useState(1)
-    const [search, setSearch] = useState("")
-
+    const query = useQuery();
+    const [search, setSearch] = useState(query.get("search") ? query.get("search") : "")
+    function useQuery() {
+        return new URLSearchParams(useLocation().search);
+    }
     useEffect(() => {
-        _getCharactersByName("",page)
+        _getCharactersByName(search,page)
     }, [])
 
     function _getCharactersByName(search,page) {
+        console.log(search)
         setPage(page)
         setSearch(search)
         getCharacterByName(search,page)
@@ -42,12 +47,15 @@ export default function Characters() {
         }
     }
     function handleSubmit(value){
+        setSearch(value)
         _getCharactersByName(value,1)
     }
     return (
         <Container>
             <Head
+                value={search}
                 onSubmit={handleSubmit}
+                placeholder={"Search by character name"}
             />
             <ListContainer>
                     {

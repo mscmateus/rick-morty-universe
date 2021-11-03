@@ -5,6 +5,7 @@ import Home from '../views/home'
 import Characters from '../views/characters'
 // import Locations from '../views/locations'
 import Episodes from '../views/episodes'
+import Character from '../views/character'
 
 export default function Routes() {
     return (
@@ -24,6 +25,9 @@ export default function Routes() {
                 </Route> */}
                 <Route path="/episodes">
                     <Episodes/>
+                </Route>
+                <Route path="/character/:id">
+                    <Character/>
                 </Route>
             </Switch>
         </BrowserRouter>
