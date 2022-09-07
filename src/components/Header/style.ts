@@ -5,8 +5,8 @@ export const Container = styled.header`
    background-color: ${props => props.theme.colors.primary};
    color: #fff;
    padding: 0.5em;
-   
    display: flex;
+   align-items: center;
    justify-content: space-between;
    flex-wrap: wrap;
 `

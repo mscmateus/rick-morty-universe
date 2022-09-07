@@ -3,14 +3,15 @@ import { ThemeContext } from 'styled-components';
 
 import { Container } from './style'
 
-interface Props { }
-const Header: React.FC<Props> = () => {
+
+const Footer = () => {
    const { colors, title } = useContext(ThemeContext);
    return (
       <Container>
-         Rick And Morty Universe
+         Rick and Morty Universe<br />
+         Developed by Mateus Costa
       </Container>
    )
 }
 
-export default Header;
+export default Footer;
