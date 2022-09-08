@@ -9,7 +9,7 @@ import GlobalStyle from '../../style/global'
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 
-import { Body } from "./style";
+import { Body, MainContainer } from "./style";
 import { Outlet } from "react-router-dom";
 import CharacterList from "../../views/CharacterList";
 import Home from "../../views/Home";
@@ -27,9 +27,9 @@ const BaseLayout: React.FC = () => {
          <GlobalStyle />
          <Body>
             <Header toggleTheme={toggleTheme} />
-            <main>
+            <MainContainer>
                <Outlet />
-            </main>
+            </MainContainer>
             <Footer />
          </Body>
       </ThemeProvider>

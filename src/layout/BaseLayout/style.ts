@@ -10,3 +10,10 @@ export const Body = Styled.body`
    flex-direction: column;
    height: 100vh;
 `
+
+export const MainContainer = Styled.main`
+   padding-top: 3em;
+   padding-bottom: 3em;
+   padding-left: 2em ;
+   padding-right: 2em;
+`
