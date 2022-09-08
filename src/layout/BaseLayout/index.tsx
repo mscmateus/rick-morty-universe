@@ -10,9 +10,14 @@ import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 
 import { Body } from "./style";
+import { Outlet } from "react-router-dom";
+import CharacterList from "../../views/CharacterList";
+import Home from "../../views/Home";
 
-
-const BaseLayout = ({Element}) => {
+type Props = {
+   children: React.ReactNode,
+};
+const BaseLayout: React.FC = () => {
    const [theme, setTheme] = usePersistedState<DefaultTheme>('theme', light)
    const toggleTheme = () => {
       setTheme(theme.title === 'light' ? dark : light)
@@ -23,7 +28,7 @@ const BaseLayout = ({Element}) => {
          <Body>
             <Header toggleTheme={toggleTheme} />
             <main>
-               <Element />
+               <Outlet />
             </main>
             <Footer />
          </Body>
