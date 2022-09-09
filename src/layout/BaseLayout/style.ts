@@ -16,4 +16,5 @@ export const MainContainer = Styled.main`
    padding-bottom: 3em;
    padding-left: 2em ;
    padding-right: 2em;
+   color: ${props => props.theme.colors['text-main']}
 `

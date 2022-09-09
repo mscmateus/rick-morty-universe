@@ -13,20 +13,22 @@ import { Body, MainContainer } from "./style";
 import { Outlet } from "react-router-dom";
 import CharacterList from "../../views/CharacterList";
 import Home from "../../views/Home";
+import NavigationMenu from "../../components/NavigationMenu";
 
 type Props = {
    children: React.ReactNode,
 };
 const BaseLayout: React.FC = () => {
-   const [theme, setTheme] = usePersistedState<DefaultTheme>('theme', light)
+   const [theme, setTheme] = usePersistedState<string>('theme', light.title)
    const toggleTheme = () => {
-      setTheme(theme.title === 'light' ? dark : light)
+      setTheme(theme === light.title ? dark.title : light.title)
    }
    return (
-      <ThemeProvider theme={theme}>
+      <ThemeProvider theme={theme === light.title ? light : dark}>
          <GlobalStyle />
          <Body>
             <Header toggleTheme={toggleTheme} />
+            <NavigationMenu />
             <MainContainer>
                <Outlet />
             </MainContainer>

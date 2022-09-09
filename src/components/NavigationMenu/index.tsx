@@ -5,14 +5,14 @@ import { ThemeContext } from 'styled-components';
 import { Container } from './style'
 
 
-const Footer = () => {
+const NavigationMenu = () => {
    let ano = new Date()
    return (
       <Container>
-         Rick and Morty Universe<br />
-         &#169; {ano.getFullYear()} Developed by <Link to="https://github.com/mscmateus">Mateus Costa</Link>
+         <Link to={""}>Teste</Link>
+         <Link to={"character-list"}>Teste</Link>
       </Container>
    )
 }
 
-export default Footer;
+export default NavigationMenu;
