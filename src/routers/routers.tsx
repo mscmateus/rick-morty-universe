@@ -6,6 +6,7 @@ import CharacterList from '../views/Characters';
 import BaseLayout from '../layout/BaseLayout';
 import LoadingPage from '../components/LoadingPage';
 import { useGlobalState } from '../utils/globalStateProvider';
+import CharactersDetails from '../views/CharacterDetalhes';
 
 export default function Routers() {
    const { setGlobalState } = useGlobalState();
@@ -20,6 +21,7 @@ export default function Routers() {
             <Route path="/" element={<BaseLayout />}>
                <Route path="" element={<Home />} />
                <Route path="character-list" element={<CharacterList />} />
+               <Route path="character-details" element={<CharactersDetails />} />
             </Route>
          </Routes>
       </BrowserRouter>

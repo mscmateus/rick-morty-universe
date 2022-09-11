@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { AiFillHeart } from "react-icons/ai"
+import { Link } from "react-router-dom";
 
 export const List = styled.div`
   justify-content: center;
@@ -44,10 +45,15 @@ export const CharacterImage = styled.img`
   width: 100%;
 `
 
-export const CharacterName = styled.h1`
+export const CharacterName = styled(Link)`
   margin-top: 0.5em;
   font-size: 24px;
+  font-weight: 900;
+  text-decoration: none;
   color: ${Props => Props.theme.colors["text-main"]};
+  &:hover {
+    color: ${Props => Props.theme.colors.green}
+  }
 `
 
 interface StatusProp {
