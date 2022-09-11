@@ -1,26 +1,14 @@
 import React from "react";
-import { List, ListItem } from "./style";
+import { Character } from "../../../../interfaces";
+import ListItem from "../ListItem";
+import { List } from "../style";
 
-const CharacterList = () => {
+const CharacterList: React.FC<{ list: Character[] }> = ({ list }) => {
    return (
       <List>
-         <ListItem >a</ListItem>
-         <ListItem>b</ListItem>
-         <ListItem >c</ListItem>
-         <ListItem >d</ListItem>
-         <ListItem >e</ListItem>
-         <ListItem >f</ListItem>
-         <ListItem >f</ListItem>
-         <ListItem >f</ListItem>
-         <ListItem >f</ListItem>
-         <ListItem >f</ListItem>
-         <ListItem >f</ListItem>
-         <ListItem >f</ListItem>
-         <ListItem >f</ListItem>
-         <ListItem >f</ListItem>
-         <ListItem >f</ListItem>
-         <ListItem >f</ListItem>
-         <ListItem >f</ListItem>
+         {list.map((character, index) => (
+            <ListItem key={index} character={character} />
+         ))}
       </List>
    )
 }
