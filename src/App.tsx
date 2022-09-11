@@ -1,14 +1,13 @@
-import React, { useEffect } from 'react';
-import { ThemeProvider, DefaultTheme } from 'styled-components'
-import usePersistedState from './utils/usePersistedState';
+import React, { useEffect, useState } from 'react';
 
 import Routers from './routers/routers';
-
-
+import { GlobalStateProvider } from './utils/globalStateProvider';
 
 function App() {
 	return (
-		<Routers/>
+		<GlobalStateProvider>
+			<Routers />
+		</GlobalStateProvider>
 	);
 }
 

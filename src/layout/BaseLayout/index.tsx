@@ -1,5 +1,5 @@
 import React from "react";
-import { ThemeProvider, DefaultTheme } from 'styled-components'
+import { ThemeProvider } from 'styled-components'
 import usePersistedState from "../../utils/usePersistedState";
 
 import light from '../../style/theme/light';
@@ -11,8 +11,6 @@ import Footer from "../../components/Footer";
 
 import { Body, MainContainer } from "./style";
 import { Outlet } from "react-router-dom";
-import CharacterList from "../../views/CharacterList";
-import Home from "../../views/Home";
 import NavigationMenu from "../../components/NavigationMenu";
 
 type Props = {

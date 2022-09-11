@@ -1,16 +1,13 @@
-import React, { useContext } from 'react'
-import { Link } from 'react-router-dom';
-import { ThemeContext } from 'styled-components';
+import React from 'react'
 
-import { Container } from './style'
+import { Container, Link } from './style'
 
 
 const NavigationMenu = () => {
-   let ano = new Date()
    return (
       <Container>
-         <Link to={""}>Teste</Link>
-         <Link to={"character-list"}>Teste</Link>
+         <Link to={""}>Home</Link>
+         <Link to={"character-list"}>Character List</Link>
       </Container>
    )
 }

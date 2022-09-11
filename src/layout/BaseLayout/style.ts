@@ -1,6 +1,6 @@
 import Styled from 'styled-components'
 
-export const Body = Styled.body`
+export const Body = Styled.div`
    margin: 0;
    padding: 0;
    box-sizing: border-box;
@@ -8,7 +8,7 @@ export const Body = Styled.body`
    color: ${props => props.theme.colors.text};
    display: flex;
    flex-direction: column;
-   height: 100vh;
+   min-height: 100vh;
 `
 
 export const MainContainer = Styled.main`

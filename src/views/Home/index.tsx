@@ -1,6 +1,12 @@
-import React from "react";
-
+import React, { useContext, useEffect } from "react";
+import { GlobalStateInterface, GlobalStateProvider, useGlobalState } from '../../utils/globalStateProvider';
 const Home = () => {
+   const { setGlobalState } = useGlobalState();
+   const { globalState } = useGlobalState();
+   useEffect(() => {
+      setGlobalState((prev) => ({ ...prev, loading: true }));
+      console.log(globalState.loading)
+   },[])
    return (
       <div>
          <h1>
