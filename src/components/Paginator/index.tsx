@@ -1,25 +1,41 @@
 import React from 'react'
-import { ContainerPaginator, ContainerLeft, ContainerNumbers, ContainerRight, PageLink, Container } from './style';
+import { ContainerPaginator, ContainerLeft, ContainerNumbers, ContainerRight, PageButton, Container } from './style';
 
-const Paginator = () => {
+type PaginatorProps = {
+   atualPage: number,
+   lastPage: number,
+   pageOnChange(page: number): number
+}
+const Paginator: React.FC<PaginatorProps> = ({ ...PaginatorProps }) => {
+
+   const firstPageOnClickHandle = () => {
+      PaginatorProps.pageOnChange(1);
+   }
+   const prevPageOnClickHandle = () => {
+      PaginatorProps.pageOnChange(PaginatorProps.atualPage - 1);
+   }
+   const nextPageOnClickHandle = () => {
+      PaginatorProps.pageOnChange(PaginatorProps.atualPage + 1);
+   }
+   const lastPageOnClickHandle = () => {
+      PaginatorProps.pageOnChange(PaginatorProps.lastPage);
+   }
    return (
       <Container>
          <ContainerPaginator>
             <ContainerLeft>
-               <li><PageLink to="#">First</PageLink></li>
-               <li><PageLink to="#">Prev</PageLink></li>
+               <li><PageButton onClick={firstPageOnClickHandle}>First</PageButton></li>
+               {PaginatorProps.atualPage + 1 !== PaginatorProps.lastPage ? <li><PageButton onClick={prevPageOnClickHandle} >Prev</PageButton></li> : null}
             </ContainerLeft>
             <ContainerNumbers>
-               <li><PageLink to="#">4</PageLink></li>
-               <li><PageLink active={true} to="#">5</PageLink></li>
-               <li><PageLink to="#">6</PageLink></li>
+               <li><PageButton active={true}>{PaginatorProps.atualPage}</PageButton></li>
             </ContainerNumbers>
             <ContainerRight>
-               <li><PageLink to="#">Next</PageLink></li>
-               <li><PageLink to="#">Last</PageLink></li>
+               {PaginatorProps.atualPage + 1 !== PaginatorProps.lastPage ? <li><PageButton onClick={nextPageOnClickHandle}>Next</PageButton></li> : null}
+               <li><PageButton onClick={lastPageOnClickHandle}>Last</PageButton></li>
             </ContainerRight>
          </ContainerPaginator>
-         <small>Total: 123 pages</small>
+         <small>Total: 1234 characters in 123 pages</small>
       </Container>
    )
 }

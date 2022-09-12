@@ -49,7 +49,7 @@ export const ContainerRight = styled.ul`
 type PageLinkProps = {
    active?: boolean
 }
-export const PageLink = styled(Link) <PageLinkProps>`
+export const PageButton = styled.button <PageLinkProps>`
    display: block;
    padding: 1em;
    background-color: ${Props => (Props.active) ? Props.theme.colors.green : Props.theme.colors.primary};
