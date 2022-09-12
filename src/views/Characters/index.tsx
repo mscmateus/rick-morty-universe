@@ -25,7 +25,7 @@ const Characters = () => {
             Characters
          </h1>
          <CharacterList list={characterList} />
-         {/* <Paginator atualPage={atualPage} firstOnClickHandler={firstOnClickHandler} /> */}
+         <Paginator atualPage={atualPage} pageOnChange={setAtualPage} lastPage={responseData.info?.pages}/>
       </div>
    )
 }

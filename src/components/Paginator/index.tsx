@@ -1,26 +1,33 @@
-import React from 'react'
+import React, { Dispatch, SetStateAction, useEffect } from 'react'
 import { ContainerPaginator, ContainerLeft, ContainerNumbers, ContainerRight, PageButton, Container } from './style';
 
 type PaginatorProps = {
    atualPage: number,
-   lastPage: number,
-   pageOnChange(page: number): number
+   lastPage?: number,
+   pageOnChange: Dispatch<SetStateAction<number>>
 }
 const Paginator: React.FC<PaginatorProps> = ({ ...PaginatorProps }) => {
 
+   useEffect(() => {
+      console.log(PaginatorProps.atualPage);
+      console.log(PaginatorProps.lastPage);
+   })
    const firstPageOnClickHandle = () => {
       PaginatorProps.pageOnChange(1);
    }
    const prevPageOnClickHandle = () => {
-      PaginatorProps.pageOnChange(PaginatorProps.atualPage - 1);
+      if (PaginatorProps.atualPage > 1)
+         PaginatorProps.pageOnChange(PaginatorProps.atualPage - 1);
    }
    const nextPageOnClickHandle = () => {
-      PaginatorProps.pageOnChange(PaginatorProps.atualPage + 1);
+      if (PaginatorProps.lastPage !== null)
+            PaginatorProps.pageOnChange(PaginatorProps.atualPage + 1);
    }
    const lastPageOnClickHandle = () => {
-      PaginatorProps.pageOnChange(PaginatorProps.lastPage);
+      if (PaginatorProps.lastPage)
+         PaginatorProps.pageOnChange(PaginatorProps.lastPage)
    }
-   return (
+   let render = (
       <Container>
          <ContainerPaginator>
             <ContainerLeft>
@@ -32,12 +39,13 @@ const Paginator: React.FC<PaginatorProps> = ({ ...PaginatorProps }) => {
             </ContainerNumbers>
             <ContainerRight>
                {PaginatorProps.atualPage + 1 !== PaginatorProps.lastPage ? <li><PageButton onClick={nextPageOnClickHandle}>Next</PageButton></li> : null}
-               <li><PageButton onClick={lastPageOnClickHandle}>Last</PageButton></li>
+               {PaginatorProps.lastPage !== null ? <li><PageButton onClick={lastPageOnClickHandle}>Last</PageButton></li> : null}
             </ContainerRight>
          </ContainerPaginator>
          <small>Total: 1234 characters in 123 pages</small>
       </Container>
    )
+   return render
 }
 
 export default Paginator;
