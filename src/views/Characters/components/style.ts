@@ -44,6 +44,14 @@ export const ListItem = styled.div`
 export const CharacterImage = styled.img`
   width: 100%;
 `
+export const ImageLoadingContainer = styled.div`
+  display: flex;
+  width: 100%;
+  height: 10em;
+  align-items: center;
+  justify-content: center;
+  color: ${Props => Props.theme.colors.green};
+`
 
 export const CharacterName = styled(Link)`
   margin-top: 0.5em;

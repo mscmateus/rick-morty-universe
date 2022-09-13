@@ -50,6 +50,7 @@ type PageLinkProps = {
    active?: boolean
 }
 export const PageButton = styled.button <PageLinkProps>`
+   border: none;
    display: block;
    padding: 1em;
    background-color: ${Props => (Props.active) ? Props.theme.colors.green : Props.theme.colors.primary};

@@ -21,7 +21,7 @@ const Paginator: React.FC<PaginatorProps> = ({ ...PaginatorProps }) => {
    }
    const nextPageOnClickHandle = () => {
       if (PaginatorProps.lastPage !== null)
-            PaginatorProps.pageOnChange(PaginatorProps.atualPage + 1);
+         PaginatorProps.pageOnChange(PaginatorProps.atualPage + 1);
    }
    const lastPageOnClickHandle = () => {
       if (PaginatorProps.lastPage)
