@@ -6,8 +6,8 @@ import { List } from "../style";
 const CharacterList: React.FC<{ list: Character[] }> = ({ list }) => {
    return (
       <List>
-         {list.map((character, index) => (
-            <ListItem key={index} character={character} />
+         {list.map((character) => (
+            <ListItem key={character.id} character={character} />
          ))}
       </List>
    )

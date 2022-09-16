@@ -15,8 +15,8 @@ const Characters = () => {
          }
       })
          .then((response) => {
-            console.log(response.data)
             setCharacterList(response.data.results)
+            setResponseData(response.data)
          })
    }, [atualPage,])
    return (
@@ -24,8 +24,12 @@ const Characters = () => {
          <h1>
             Characters
          </h1>
-         <CharacterList list={characterList} />
-         <Paginator atualPage={atualPage} pageOnChange={setAtualPage} lastPage={responseData.info?.pages}/>
+         {characterList.length > 0 ? <CharacterList list={characterList} />: null}
+         <Paginator atualPage={atualPage}
+            count={responseData.info ? responseData.info.count : undefined}
+            pages={responseData.info ? responseData.info.pages : undefined}
+            pageOnChange={setAtualPage}
+            lastPage={responseData.info ? responseData.info.pages : undefined} />
       </div>
    )
 }
