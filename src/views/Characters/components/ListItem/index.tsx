@@ -5,25 +5,21 @@ import { Character } from "../../../../interfaces";
 import { CharacterImage, CharacterName, CharacterStatus, CharacterStatusIcon, CharacterType, ImageLoadingContainer, List, ListItem as Container } from "../style";
 
 const ListItem: React.FC<{ character: Character }> = ({ character }) => {
-   const [loading, setLoading] = useState(true)
+   const [loaded, setLoaded] = useState(true)
    const onLoadHandle = () => {
-      // setTimeout(() => {
-         setLoading(false)
-      // }, 2000)
+      setLoaded(true)
    }
-   useEffect(()=>{
-      console.log("Imagem mudou")
-      console.log(!loading)
-      setLoading(true)
-   },[character.image])
+   useEffect(() => {
+      setLoaded(true)
+   }, [character.image])
    return (<Container >
-      {loading ? <ImageLoadingContainer>
+      <ImageLoadingContainer style={{ display: loaded ? 'none' : 'block' }}>
          <BounceLoader />
-      </ImageLoadingContainer> : null}
-      <Link to={"/character-details"} style={{ display: !loading ? 'block' : 'none' }}>
+      </ImageLoadingContainer>
+      <Link to={"/character-details/"+character.id} style={{ display: loaded ? 'block' : 'none' }}>
          <CharacterImage src={character.image} onLoad={onLoadHandle} />
       </Link>
-      <CharacterName to={"/character-details"}>{character.name}</CharacterName>
+      <CharacterName to={"/character-details/"+character.id}>{character.name}</CharacterName>
       <div style={{ display: "flex" }}>
          <CharacterStatusIcon status={character.status} />
          <CharacterStatus>{character.status}</CharacterStatus>

@@ -5,7 +5,7 @@ const Home = () => {
    const { globalState } = useGlobalState();
    useEffect(() => {
       setGlobalState((prev) => ({ ...prev, loading: true }));
-      console.log(globalState.loading)
+      // console.log(globalState.loading)
    },[])
    return (
       <div>
