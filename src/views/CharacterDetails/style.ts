@@ -1,35 +1,54 @@
 import styled from 'styled-components'
 
 export const Container = styled.div`
-
+   h1{
+      margin-bottom: 0.75em;
+   }
+   h2{
+      margin-bottom: 0.5em;
+   }
 `
 export const CharacterContainer = styled.div`
-   /* padding-block: 2em; */
-   display: flex;
-   background: red;
-   /* grid-template-columns: auto auto;
-   grid-auto-rows: auto;
-   grid-gap: 1em; */
-   @media only screen and (max-width: 768px) {
+   display: flexbox;
+   padding: 1em;
+   border-radius: 0.5em;
+   background: ${Props => Props.theme.colors.primary};
+   @media screen and (max-width: 992px) {
+      border-radius: 0.5em;
       display: block;
-  }
+      justify-content: center;
+      align-items: center;
+      padding: 1em;
+   }
 `
 
 export const ImageContainer = styled.div`
-   @media only screen and (max-width: 768px) {
+   display: block;
+   @media screen and (max-width: 992px) {
+      display: flex;
       justify-content: center;
       align-items: center;
    }
-   background: ${Props => Props.theme.colors.primary};
-   padding: 1em;
-   margin: 1em;
-   border-radius: 5px;
-   `
+`
 export const InfoContainer = styled.div`
-   background: ${Props => Props.theme.colors.primary};
-   padding: 2em;
-   margin: 1em;
-   border-radius: 5px;
    display: flex;
+   flex-direction: column;
+   margin-left: 2em;
+   @media only screen and (max-width: 768px) {
+      margin-top: 2em;
+      margin-left: 0;
+   }
+   h3{
+      margin-bottom: 0.5em;
+   }
+   ul{
+      list-style: none;
+      li{
+         margin-bottom: 0.25em;
+      }
+   }
+`
+export const EpisodeContainer = styled.div`
+   display: block;
    flex-direction: column;
 `

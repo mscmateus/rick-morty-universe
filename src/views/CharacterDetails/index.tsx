@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
 import { Character } from '../../interfaces';
+import EpisodeList from './components/EpisodeList';
 import { Container, InfoContainer, CharacterContainer, ImageContainer } from './style';
 
 // const defaultCharacter = 
@@ -39,22 +40,27 @@ const CharactersDetails = () => {
    return (
       <Container>
          <h1>Character Details</h1>
-         <h2>{character.name ? character.name : 'Name undefined'}</h2>
          <CharacterContainer>
             <ImageContainer>
+               <h2>Name: {character.name ? character.name : 'Name undefined'}</h2>
                <img src={character.image} />
-               <h3>{character.status}</h3>
-               <h3>Especie: {character.species}</h3>
             </ImageContainer>
             <InfoContainer>
-               <h3>Tipe: {character.type}</h3>
-               <h3>Gender: {character.gender}</h3>
-               <h3>Origin location: {character.origin.name}</h3>
-               <h3>Last known location: {character.location.name}</h3>
+               <h3>Details</h3>
+               <ul>
+                  <li>{character.status}</li>
+                  <li>Especie: {character.species}</li>
+                  <li>Tipe: {character.type}</li>
+                  <li>Gender: {character.gender}</li>
+                  <li>Origin location: {character.origin.name}</li>
+                  <li>Last known location: {character.location.name}</li>
+               </ul>
+            </InfoContainer>
+            <InfoContainer>
                <h3>Character appeared episodes:</h3>
+               <EpisodeList list={character.episode}/>
             </InfoContainer>
          </CharacterContainer>
-         {epList}
       </Container>
    )
 }
