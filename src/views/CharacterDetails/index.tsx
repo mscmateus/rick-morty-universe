@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
 import { Character } from '../../interfaces';
 import EpisodeList from './components/EpisodeList';
-import { Container, InfoContainer, CharacterContainer, ImageContainer } from './style';
+import { Container, InfoContainer, CharacterContainer, ImageContainer, EpisodeContainer, CharacterInfos } from './style';
 
 // const defaultCharacter = 
 const CharactersDetails = () => {
@@ -41,25 +41,27 @@ const CharactersDetails = () => {
       <Container>
          <h1>Character Details</h1>
          <CharacterContainer>
-            <ImageContainer>
-               <h2>Name: {character.name ? character.name : 'Name undefined'}</h2>
-               <img src={character.image} />
-            </ImageContainer>
-            <InfoContainer>
-               <h3>Details</h3>
-               <ul>
-                  <li>{character.status}</li>
-                  <li>Especie: {character.species}</li>
-                  <li>Tipe: {character.type}</li>
-                  <li>Gender: {character.gender}</li>
-                  <li>Origin location: {character.origin.name}</li>
-                  <li>Last known location: {character.location.name}</li>
-               </ul>
-            </InfoContainer>
-            <InfoContainer>
+            <h2>{character.name ? character.name : 'Name undefined'}</h2>
+            <CharacterInfos>
+               <ImageContainer>
+                  <img src={character.image} />
+               </ImageContainer>
+               <InfoContainer>
+                  <h3>Details</h3>
+                  <ul>
+                     <li>{character.status}</li>
+                     <li>Especie: {character.species}</li>
+                     <li>Tipe: {character.type}</li>
+                     <li>Gender: {character.gender}</li>
+                     <li>Origin location: {character.origin.name}</li>
+                     <li>Last known location: {character.location.name}</li>
+                  </ul>
+               </InfoContainer>
+            </CharacterInfos>
+            <EpisodeContainer>
                <h3>Character appeared episodes:</h3>
-               <EpisodeList list={character.episode}/>
-            </InfoContainer>
+               <EpisodeList list={character.episode} />
+            </EpisodeContainer>
          </CharacterContainer>
       </Container>
    )

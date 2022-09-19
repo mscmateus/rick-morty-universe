@@ -1,47 +1,35 @@
+import axios from "axios";
 import React, { useEffect, useLayoutEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { BounceLoader } from "react-spinners";
 import { Episode } from "../../../../interfaces";
-import { CharacterImage, CharacterName, CharacterStatus, CharacterStatusIcon, CharacterType, ImageLoadingContainer, List, ListItem as Container } from "../style";
+import { Container } from "./style";
 
 const ListItem: React.FC<{ episodeURL: string }> = ({ episodeURL }) => {
-   const [loaded, setLoaded] = useState(false)
-   const [episode, setEpisode] = useState<Episode>()
-   const onLoadHandle = () => {
-      setLoaded(true)
-   }
+   const [episode, setEpisode] = useState<Episode>({
+      id: 0,
+      name: '',
+      url: '',
+      created: '',
+      air_date: '',
+      episode: '',
+      character: []
+   })
    useEffect(() => {
-      setLoaded(false)
-
+      axios.get(episodeURL)
+         .then((response) => {
+            setEpisode(response.data)
+         })
    }, [])
-   return loaded ?
-      (<Container >
-         <Link to={"/character-details/" + episode.id}>
-            <episodeImage src={episode.image} onLoad={onLoadHandle} />
-         </Link>
-         <CharacterName to={"/character-details/" + episode.id}>{episode.name}</episodeName>
-         <div style={{ display: "flex" }}>
-            <CharacterStatusIcon status={episode.status} />
-            <CharacterStatus>{episode.status}</CharacterStatus>
-         </div>
-         <CharacterType>{episode.type}</CharacterType>
+   return (
+      <Container >
+         <ul>
+            <li>{episode.name}</li>
+            <li>{episode.episode}</li>
+            <li>{episode.air_date}</li>
+         </ul>
       </Container>
-      ) : (
-         <Container >
-            <ImageLoadingContainer>
-               <BounceLoader />
-            </ImageLoadingContainer>
-            <Link to={"/episode-details/" + episode.id} style={{ display: 'none' }}>
-               <CharacterImage src={episode.image} onLoad={onLoadHandle} />
-            </Link>
-            <CharacterName to={"/episode-details/" + episode.id}>{episode.name}</CharacterName>
-            <div style={{ display: "flex" }}>
-               <CharacterStatusIcon status={episode.status} />
-               <CharacterStatus>{episode.status}</CharacterStatus>
-            </div>
-            <CharacterType>{episode.type}</CharacterType>
-         </Container>
-      )
+   )
 }
 
 export default ListItem;

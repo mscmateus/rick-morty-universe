@@ -5,17 +5,17 @@ import { Character } from "../../../../interfaces";
 import { CharacterImage, CharacterName, CharacterStatus, CharacterStatusIcon, CharacterType, ImageLoadingContainer, List, ListItem as Container } from "../style";
 
 const ListItem: React.FC<{ character: Character }> = ({ character }) => {
-   const [loaded, setLoaded] = useState(false)
+   const [loaded, setLoaded] = useState<boolean>(true)
    const onLoadHandle = () => {
       setLoaded(true)
    }
    useEffect(() => {
       setLoaded(false)
-   }, [character.image,])
+   }, [character, ])
    return loaded ?
       (<Container >
          <Link to={"/character-details/" + character.id}>
-            <CharacterImage src={character.image} onLoad={onLoadHandle} />
+            <CharacterImage src={character.image} />
          </Link>
          <CharacterName to={"/character-details/" + character.id}>{character.name}</CharacterName>
          <div style={{ display: "flex" }}>

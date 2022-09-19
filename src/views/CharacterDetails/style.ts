@@ -9,25 +9,24 @@ export const Container = styled.div`
    }
 `
 export const CharacterContainer = styled.div`
-   display: flexbox;
-   padding: 1em;
-   border-radius: 0.5em;
-   background: ${Props => Props.theme.colors.primary};
-   @media screen and (max-width: 992px) {
-      border-radius: 0.5em;
-      display: block;
-      justify-content: center;
-      align-items: center;
-      padding: 1em;
+   padding-block: 2em;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   background-color: ${Props => Props.theme.colors.primary};
+`
+
+export const CharacterInfos = styled.div`
+   display: flex;
+   @media screen and (max-width: 768px){
+      display: flex;
+      flex-direction: column;
    }
 `
 
 export const ImageContainer = styled.div`
-   display: block;
-   @media screen and (max-width: 992px) {
-      display: flex;
-      justify-content: center;
-      align-items: center;
+   @media screen and (max-width: 768px){
+      width: 100%;
    }
 `
 export const InfoContainer = styled.div`
@@ -49,6 +48,9 @@ export const InfoContainer = styled.div`
    }
 `
 export const EpisodeContainer = styled.div`
+   padding-block: 2em;
    display: block;
    flex-direction: column;
 `
+
+
