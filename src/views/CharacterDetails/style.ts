@@ -9,7 +9,7 @@ export const Container = styled.div`
    }
 `
 export const CharacterContainer = styled.div`
-   padding-block: 2em;
+   padding: 2em;
    display: flex;
    flex-direction: column;
    align-items: center;
@@ -24,7 +24,7 @@ export const CharacterInfos = styled.div`
    }
 `
 
-export const ImageContainer = styled.div`
+export const CharacterImage = styled.img`
    @media screen and (max-width: 768px){
       width: 100%;
    }

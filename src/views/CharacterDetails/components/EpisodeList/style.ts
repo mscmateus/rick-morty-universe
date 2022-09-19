@@ -13,11 +13,11 @@ export const List = styled.div`
 
   /* Extra small devices (phones, 600px and down) */
   @media only screen and (max-width: 600px) {
-    grid-template-columns: 18em;
+    grid-template-columns: 100%;
   }
   /* Small devices (portrait tablets and large phones, 600px and up) */
   @media only screen and (min-width: 600px) {
-    grid-template-columns: 18em;
+    grid-template-columns: 100%;
   }
   /* Medium devices (landscape tablets, 768px and up) */
   @media only screen and (min-width: 768px) {

@@ -9,9 +9,13 @@ export const Body = Styled.div`
    display: flex;
    flex-direction: column;
    min-height: 100vh;
-`
+   `
 
 export const MainContainer = Styled.main`
+   @media screen and (max-width: 314px) {
+      padding: 0;
+      margin: 0;
+   }
    padding-top: 3em;
    padding-bottom: 3em;
    padding-left: 2em ;

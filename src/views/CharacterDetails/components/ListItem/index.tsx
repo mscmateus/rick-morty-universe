@@ -24,7 +24,7 @@ const ListItem: React.FC<{ episodeURL: string }> = ({ episodeURL }) => {
    return (
       <Container >
          <ul>
-            <li>{episode.name}</li>
+            <li><h3>{episode.name}</h3></li>
             <li>{episode.episode}</li>
             <li>{episode.air_date}</li>
          </ul>

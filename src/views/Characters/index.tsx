@@ -3,6 +3,7 @@ import CharacterList from "./components/CharacterList";
 import axios from "axios";
 import { Character, Info } from "../../interfaces";
 import Paginator from "../../components/Paginator";
+import Filter from "../../components/Filter";
 
 const Characters = () => {
    const [responseData, setResponseData] = useState<Info<Character[]>>({});
@@ -24,6 +25,7 @@ const Characters = () => {
          <h1>
             Characters
          </h1>
+         <Filter/>
          {characterList.length > 0 ? <CharacterList list={characterList} />: null}
          <Paginator atualPage={atualPage}
             count={responseData.info ? responseData.info.count : undefined}

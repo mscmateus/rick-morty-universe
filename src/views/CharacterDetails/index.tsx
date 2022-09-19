@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
 import { Character } from '../../interfaces';
 import EpisodeList from './components/EpisodeList';
-import { Container, InfoContainer, CharacterContainer, ImageContainer, EpisodeContainer, CharacterInfos } from './style';
+import { Container, InfoContainer, CharacterContainer, CharacterImage, EpisodeContainer, CharacterInfos } from './style';
 
 // const defaultCharacter = 
 const CharactersDetails = () => {
@@ -43,9 +43,7 @@ const CharactersDetails = () => {
          <CharacterContainer>
             <h2>{character.name ? character.name : 'Name undefined'}</h2>
             <CharacterInfos>
-               <ImageContainer>
-                  <img src={character.image} />
-               </ImageContainer>
+                  <CharacterImage src={character.image} />
                <InfoContainer>
                   <h3>Details</h3>
                   <ul>
