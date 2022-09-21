@@ -11,17 +11,19 @@ const Characters = () => {
    const [atualPage, setAtualPage] = useState(1);
    const [nameSearch, setNameSearch] = useState("")
    const [statusSearch, setStatusSearch] = useState("")
-   const [speciesSearch, setSpeciesSearch] = useState("")
-   const [typeSearch, setTypeSearch] = useState("")
    const [genderSearch, setGenderSearch] = useState("")
+
+   const [byName, setByName] = useState<boolean>(true);
+   const [byType, setByType] = useState<boolean>(false);
+   const [bySpecie, setBySpecie] = useState<boolean>(false);
    useEffect(() => {
       axios.get('https://rickandmortyapi.com/api/character', {
          params: {
             page: atualPage,
-            name: nameSearch,
+            name: byName ? nameSearch : "",
             status: statusSearch,
-            species: speciesSearch,
-            type: typeSearch,
+            species: bySpecie ? nameSearch : "",
+            type: byType ? nameSearch : "",
             gender: genderSearch
          }
       })
@@ -29,13 +31,20 @@ const Characters = () => {
             setCharacterList(response.data.results)
             setResponseData(response.data)
          })
-   }, [atualPage, nameSearch, statusSearch, speciesSearch, typeSearch, genderSearch,])
+         .catch((error)=>{
+            console.log(error.response)
+            console.log(error.status)
+         })
+   }, [atualPage, nameSearch, statusSearch, genderSearch, byName, bySpecie, byType])
    return (
       <div>
          <h1>
             Characters
          </h1>
          <Filter
+            byName={byName} onByNameChange={setByName}
+            byType={byType} onByTypeChange={setByType}
+            bySpecie={bySpecie} onBySpecieChange={setBySpecie}
             textValue={nameSearch} onTextChange={setNameSearch}
             genderValue={genderSearch} onGenderChange={setGenderSearch}
             onStatusChange={setStatusSearch} statusValue={statusSearch} />
