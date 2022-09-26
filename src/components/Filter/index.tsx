@@ -1,6 +1,6 @@
 import React, { Dispatch, SetStateAction, ChangeEvent, useState } from "react";
 import ReactSwitch from "react-switch";
-import { Container, TextInput } from "./style";
+import { Container, TextInput, OptionsContainer, SelectsContainer, FormItem, FilterContainer } from "./style";
 
 type FilterProps = {
    statusValue: string,
@@ -47,36 +47,70 @@ const Filter: React.FC<FilterProps> = ({
    }
    return (
       <Container>
-         <h1>Filtro</h1>
-         <TextInput type="text" value={textValue} onChange={onTextChangeHandler} />
-         <ReactSwitch
-            checked={byName}
-            onChange={onByNameChangeHandler}
-         /> Name
-         <ReactSwitch
-            checked={byType}
-            onChange={onByTypeChangeHandler}
-         /> Type
-         <ReactSwitch
-            checked={bySpecie}
-            onChange={onBySpecieChangeHandler}
-         /> Specie
-         <label htmlFor="genderSearch">Gender:</label>
-         <select id="genderSearch" onChange={onGenderChangeHandler}>
-            <option value="">Select a gender...</option>
-            <option value="Female">Female</option>
-            <option value="Male">Male</option>
-            <option value="Genderless">Genderless</option>
-            <option value="unknown">unknown</option>
-         </select>
-         <label htmlFor="statusSearch">Status:</label>
-         <select id="statusSearch" onChange={onStatusChangeHandler}>
-            <option value="">Select a status...</option>
-            <option value="Dead">Dead</option>
-            <option value="Alive">Alive</option>
-            <option value="unknown">unknown</option>
-         </select>
-      </Container>
+         <FilterContainer>
+            <h1>Filter</h1>
+            <OptionsContainer>
+               <TextInput type="text" value={textValue} onChange={onTextChangeHandler} />
+               ilter text for:
+               <ul>
+                  <li>
+                     <ReactSwitch
+                        checked={byName}
+                        onChange={onByNameChangeHandler}
+                        checkedIcon={false}
+                        uncheckedIcon={false}
+                        height={10}
+                        handleDiameter={20}
+                        width={30}
+                     />Name
+                  </li>
+                  <li>
+                     <ReactSwitch
+                        checked={byType}
+                        onChange={onByTypeChangeHandler}
+                        checkedIcon={false}
+                        uncheckedIcon={false}
+                        height={10}
+                        handleDiameter={20}
+                        width={30}
+                     />Type
+                  </li>
+                  <li>
+                     <ReactSwitch
+                        checked={bySpecie}
+                        onChange={onBySpecieChangeHandler}
+                        checkedIcon={false}
+                        uncheckedIcon={false}
+                        height={10}
+                        handleDiameter={20}
+                        width={30}
+                     />Specie
+                  </li>
+               </ul>
+               <SelectsContainer>
+                  <FormItem>
+                     <label htmlFor="genderSearch">Gender:</label>
+                     <select id="genderSearch" onChange={onGenderChangeHandler}>
+                        <option value="">Select a gender...</option>
+                        <option value="Female">Female</option>
+                        <option value="Male">Male</option>
+                        <option value="Genderless">Genderless</option>
+                        <option value="unknown">unknown</option>
+                     </select>
+                  </FormItem>
+                  <FormItem>
+                     <label htmlFor="statusSearch">Status:</label>
+                     <select id="statusSearch" onChange={onStatusChangeHandler}>
+                        <option value="">Select a status...</option>
+                        <option value="Dead">Dead</option>
+                        <option value="Alive">Alive</option>
+                        <option value="unknown">unknown</option>
+                     </select>
+                  </FormItem>
+               </SelectsContainer>
+            </OptionsContainer>
+         </FilterContainer>
+      </Container >
    )
 }
 

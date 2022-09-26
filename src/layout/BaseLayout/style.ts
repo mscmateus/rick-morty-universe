@@ -12,7 +12,7 @@ export const Body = Styled.div`
    `
 
 export const MainContainer = Styled.main`
-   @media screen and (max-width: 314px) {
+   @media screen and (max-width: 390px) {
       padding: 0;
       margin: 0;
    }
