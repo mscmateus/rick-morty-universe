@@ -17,6 +17,8 @@ export const OptionsContainer = styled.div`
    padding: 0.5em;
    ul{
       list-style: none;
+      display: flex;
+      flex-direction: row;
    }
    li{
       margin: 0.25em;
@@ -38,7 +40,13 @@ export const FormItem = styled.div`
 `
 
 export const FilterContainer = styled.div`
-padding: 1em;
+   padding: 1em 3em;
+   display: flex;
+   flex-direction: row;
    border-radius: 0in;
    background-color: ${Props => Props.theme.colors.primary};
+   @media only screen and (max-width: 768px) {
+      padding: 1em;
+      flex-direction: column;
+  }
 `

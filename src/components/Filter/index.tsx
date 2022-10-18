@@ -47,11 +47,11 @@ const Filter: React.FC<FilterProps> = ({
    }
    return (
       <Container>
+         <h1>Filter</h1>
          <FilterContainer>
-            <h1>Filter</h1>
             <OptionsContainer>
                <TextInput type="text" value={textValue} onChange={onTextChangeHandler} />
-               ilter text for:
+               Filter text for:
                <ul>
                   <li>
                      <ReactSwitch
@@ -87,28 +87,28 @@ const Filter: React.FC<FilterProps> = ({
                      />Specie
                   </li>
                </ul>
-               <SelectsContainer>
-                  <FormItem>
-                     <label htmlFor="genderSearch">Gender:</label>
-                     <select id="genderSearch" onChange={onGenderChangeHandler}>
-                        <option value="">Select a gender...</option>
-                        <option value="Female">Female</option>
-                        <option value="Male">Male</option>
-                        <option value="Genderless">Genderless</option>
-                        <option value="unknown">unknown</option>
-                     </select>
-                  </FormItem>
-                  <FormItem>
-                     <label htmlFor="statusSearch">Status:</label>
-                     <select id="statusSearch" onChange={onStatusChangeHandler}>
-                        <option value="">Select a status...</option>
-                        <option value="Dead">Dead</option>
-                        <option value="Alive">Alive</option>
-                        <option value="unknown">unknown</option>
-                     </select>
-                  </FormItem>
-               </SelectsContainer>
             </OptionsContainer>
+            <SelectsContainer>
+               <FormItem>
+                  <label htmlFor="genderSearch">Gender:</label>
+                  <select id="genderSearch" onChange={onGenderChangeHandler}>
+                     <option value="">Select a gender...</option>
+                     <option value="Female">Female</option>
+                     <option value="Male">Male</option>
+                     <option value="Genderless">Genderless</option>
+                     <option value="unknown">unknown</option>
+                  </select>
+               </FormItem>
+               <FormItem>
+                  <label htmlFor="statusSearch">Status:</label>
+                  <select id="statusSearch" onChange={onStatusChangeHandler}>
+                     <option value="">Select a status...</option>
+                     <option value="Dead">Dead</option>
+                     <option value="Alive">Alive</option>
+                     <option value="unknown">unknown</option>
+                  </select>
+               </FormItem>
+            </SelectsContainer>
          </FilterContainer>
       </Container >
    )
