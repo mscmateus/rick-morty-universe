@@ -50,6 +50,7 @@ const Filter: React.FC<FilterProps> = ({
          <h1>Filter</h1>
          <FilterContainer>
             <OptionsContainer>
+               Search:
                <TextInput type="text" value={textValue} onChange={onTextChangeHandler} />
                Filter text for:
                <ul>

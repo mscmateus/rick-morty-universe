@@ -27,7 +27,7 @@ const CharactersDetails = () => {
       axios.get('https://rickandmortyapi.com/api/character/' + id)
          .then((response) => {
             setCharacter(response.data)
-            console.log(response.data.episode)
+            // console.log(response.data.episode)
          })
    }, [])
    let epList = (

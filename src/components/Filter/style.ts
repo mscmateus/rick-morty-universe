@@ -37,6 +37,9 @@ export const SelectsContainer = styled.div`
 export const FormItem = styled.div`
    display: flex;
    flex-direction: column;
+   select {
+      min-width: 150px;
+   }
 `
 
 export const FilterContainer = styled.div`
